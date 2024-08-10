@@ -1,4 +1,4 @@
-resource "azurerm_storage_account" "backup" {
+resource "azurerm_storage_account" "str1" {
   name                     = var.storage_account_name
   resource_group_name      = var.resource_group_name
   location                 = var.location
@@ -7,7 +7,7 @@ resource "azurerm_storage_account" "backup" {
   tags                     = merge(var.default_tags, var.custom_tags)
 }
 
-resource "azurerm_storage_container" "backupcontainer" {
+resource "azurerm_storage_container" "str1" {
   name                  = var.storage_container_name
   storage_account_name  = azurerm_storage_account.backup.name
   container_access_type = var.container_access_type
