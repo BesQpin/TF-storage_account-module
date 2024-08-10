@@ -7,8 +7,8 @@ resource "azurerm_storage_account" "str1" {
   tags                     = merge(var.default_tags, var.custom_tags)
 }
 
-resource "azurerm_storage_container" "str1" {
+resource "azurerm_storage_container" "strcon1" {
   name                  = var.storage_container_name
-  storage_account_name  = azurerm_storage_account.backup.name
+  storage_account_name  = azurerm_storage_account.str1.name
   container_access_type = var.container_access_type
 }
